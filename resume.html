@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sristy Shaha | Professional CV</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        :root {
+            --purple: #7444e8;
+            --dark: #171725;
+            --muted: #666675;
+            --border: #dedbea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eeeeF3;
+            color: #252532;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 22px;
+        }
+
+        .toolbar a,
+        .toolbar button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 19px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .back-button {
+            background: var(--dark);
+            color: white;
+        }
+
+        .download-button {
+            background: var(--purple);
+            color: white;
+        }
+
+        .toolbar a:hover,
+        .toolbar button:hover {
+            opacity: 0.85;
+        }
+
+        /* CV PAPER */
+
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            max-width: 100%;
+
+            margin: 0 auto 35px;
+
+            display: grid;
+            grid-template-columns: 34% 66%;
+
+            background: white;
+            box-shadow: 0 8px 35px #00000012;
+        }
+
+        /* LEFT COLUMN */
+
+        .cv-sidebar {
+            padding: 30px 22px;
+            background: #f8f7fc;
+            border-right: 1px solid var(--border);
+        }
+
+        .identity {
+            text-align: center;
+            padding-bottom: 22px;
+            margin-bottom: 22px;
+            border-bottom: 2px solid var(--purple);
+        }
+
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+
+            display: block;
+            object-fit: cover;
+            object-position: center;
+
+            margin: 0 auto 16px;
+            border-radius: 50%;
+
+            border: 3px solid var(--purple);
+            background: #ece5ff;
+        }
+
+        .photo-fallback {
+            width: 100px;
+            height: 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 16px;
+            border-radius: 50%;
+
+            background: var(--purple);
+            color: white;
+            font-size: 35px;
+        }
+
+        .identity h1 {
+            font-size: 24px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .identity p {
+            color: var(--purple);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 24px;
+        }
+
+        .sidebar-section h2,
+        .main-section h2 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+
+            padding-bottom: 8px;
+            margin-bottom: 13px;
+
+            border-bottom: 1px solid var(--purple);
+        }
+
+        .sidebar-section h2 i,
+        .main-section h2 i {
+            color: var(--purple);
+            margin-right: 7px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            margin: 13px 0;
+            font-size: 10px;
+        }
+
+        .contact-item>i {
+            width: 15px;
+            margin-top: 4px;
+            color: var(--purple);
+            text-align: center;
+        }
+
+        .contact-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 9px;
+            margin-bottom: 3px;
+        }
+
+        .contact-item strong {
+            font-size: 10px;
+            font-weight: 500;
+            overflow-wrap: anywhere;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 13px 0;
+            font-size: 10px;
+        }
+
+        .social-item>i {
+            width: 16px;
+            color: var(--purple);
+            font-size: 14px;
+        }
+
+        .social-item strong {
+            display: block;
+        }
+
+        .social-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 9px;
+        }
+
+        .language-item {
+            margin: 12px 0;
+            font-size: 11px;
+        }
+
+        .language-item small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .interest-text {
+            color: #555563;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        /* RIGHT COLUMN */
+
+        .cv-main {
+            padding: 36px 30px;
+            min-width: 0;
+        }
+
+        .main-section {
+            margin-bottom: 27px;
+        }
+
+        .main-section h2 {
+            font-size: 15px;
+        }
+
+        .main-section p,
+        .main-section li {
+            color: #494955;
+            font-size: 11px;
+            line-height: 1.85;
+        }
+
+        .education-item {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 19px;
+            border-left: 2px solid #d9caff;
+        }
+
+        .education-item::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -6px;
+
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            background: var(--purple);
+        }
+
+        .education-item h3 {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 4px;
+        }
+
+        .institution {
+            color: var(--purple) !important;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .result {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 4px 9px;
+
+            border-radius: 4px;
+            background: #f0eaff;
+            color: #5730a8;
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-list span {
+            padding: 6px 9px;
+            border: 1px solid #ded4ff;
+            border-radius: 4px;
+
+            background: #faf8ff;
+            color: #383044;
+
+            font-size: 10px;
+        }
+
+        .main-section ul {
+            padding-left: 17px;
+        }
+
+        .main-section li {
+            margin-bottom: 6px;
+        }
+
+        .cv-footer {
+            padding-top: 13px;
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+            color: var(--muted);
+            font-size: 9px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 650px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
+
+            .cv-sidebar {
+                border-right: none;
+                border-bottom: 2px solid var(--purple);
+            }
+
+            .cv-main {
+                padding: 28px 22px;
+            }
+        }
+
+        /* PRINT OR SAVE AS PDF */
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .toolbar {
+                display: none !important;
+            }
+
+            .cv-container {
+                width: 210mm;
+                min-height: 297mm;
+                max-width: none;
+                margin: 0;
+                box-shadow: none;
+
+                grid-template-columns: 34% 66%;
+            }
+
+            .cv-sidebar {
+                padding: 25px 18px;
+                border-right: 1px solid var(--border);
+                border-bottom: none;
+            }
+
+            .cv-main {
+                padding: 30px 23px;
+            }
+
+            .sidebar-section,
+            .main-section,
+            .education-item {
+                break-inside: avoid;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="toolbar">
+
+        <a href="index.html" class="back-button">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Portfolio
+        </a>
+
+        <button class="download-button" onclick="window.print()">
+            <i class="fa-solid fa-file-pdf"></i>
+            Download CV as PDF
+        </button>
+
+    </div>
+
+
+    <div class="cv-container">
+
+        <!-- LEFT COLUMN -->
+
+        <aside class="cv-sidebar">
+
+            <header class="identity">
+
+                <img src="dp.jpg" alt="Sristy Shaha"
+                    class="profile-photo" onerror="this.style.display='none';
+                    document.getElementById('photo-fallback').style.display='flex';">
+
+                <div class="photo-fallback" id="photo-fallback" style="display:none;">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+
+                <h1>Sristy Shaha</h1>
+                <p>COMPUTER SCIENCE &amp; ENGINEERING</p>
+
+            </header>
+
+
+            <!-- CONTACT -->
+
+            <section class="sidebar-section">
+
+                <h2>
+                    <i class="fa-regular fa-address-card"></i>
+                    Contact
+                </h2>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <small>Email</small>
+                        <strong>
+                            <a href="mailto:YOUR_EMAIL@example.com">
+                                sristyshaha87770@gmail.com
+                            </a>
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <small>WhatsApp</small>
+                        <strong>
+                            <a href="https://wa.me/YOURNUMBER">
+                                019xxxxx
+                            </a>
+                        </strong>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <small>Location</small>
+                        <strong>Khulna, Bangladesh</strong>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ONLINE PROFILES -->
+
+            <section class="sidebar-section">
+
+                <h2>
+                    <i class="fa-solid fa-globe"></i>
+                    Online Profiles
+                </h2>
+
+                <div class="social-item">
+                    <i class="fa-brands fa-github"></i>
+                    <div>
+                        <strong>GitHub</strong>
+                        <a href="https://github.com/" target="_blank" rel="noopener">
+                            <small>Sristy Shaha</small>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <i class="fa-brands fa-facebook"></i>
+                    <div>
+                        <strong>Facebook</strong>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <small>Sristy Shaha</small>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div>
+                        <strong>Instagram</strong>
+                        <a href="https://www.instagram.com/sparkel/" target="_blank" rel="noopener">
+                            <small>@sparkel</small>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="social-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <div>
+                        <strong>LinkedIn</strong>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                            <small>Add your profile link</small>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- LANGUAGES -->
+
+            <section class="sidebar-section">
+
+                <h2>
+                    <i class="fa-solid fa-language"></i>
+                    Languages
+                </h2>
+
+                <div class="language-item">
+                    <strong>Bangla</strong>
+                    <small>Fluent</small>
+                </div>
+
+                <div class="language-item">
+                    <strong>English</strong>
+                    <small>Fluent</small>
+                </div>
+
+            </section>
+
+
+            <!-- INTERESTS -->
+
+            <section class="sidebar-section">
+
+                <h2>
+                    <i class="fa-regular fa-heart"></i>
+                    Interests
+                </h2>
+
+                <p class="interest-text">
+                    Reading science-fiction books, exploring scientific
+                    ideas, and learning about technology.
+                </p>
+
+            </section>
+
+        </aside>
+
+
+        <!-- RIGHT COLUMN -->
+
+        <main class="cv-main">
+
+            <!-- PROFILE -->
+
+            <section class="main-section">
+
+                <h2>
+                    <i class="fa-regular fa-user"></i>
+                    Professional Profile
+                </h2>
+
+                <p>
+                    Computer Science and Engineering student at Northern
+                    University of Business and Technology. Interested in
+                    programming, software development, problem solving,
+                    and emerging technologies. Eager to strengthen technical
+                    knowledge, build practical projects, and continue
+                    learning through academic and professional opportunities.
+                </p>
+
+            </section>
+
+
+            <!-- EDUCATION -->
+
+            <section class="main-section">
+
+                <h2>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Education
+                </h2>
+
+                <div class="education-item">
+
+                    <h3>
+                        Bachelor of Science in Computer Science and Engineering
+                    </h3>
+
+                    <p class="institution">
+                        Northern University of Business and Technology
+                    </p>
+
+                    <p>Undergraduate degree</p>
+
+                    <span class="result">CGPA: 3.884</span>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <h3>Higher Secondary Certificate (HSC)</h3>
+
+                    <p class="institution">
+                        Govt. Pioneer Girls' College
+                    </p>
+
+                    <span class="result">GPA: 5.00</span>
+
+                </div>
+
+
+                <div class="education-item">
+
+                    <h3>Secondary School Certificate (SSC)</h3>
+
+                    <p class="institution">
+                        Fatima High School
+                    </p>
+
+                    <span class="result">GPA: 5.00</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- SKILLS -->
+
+            <section class="main-section">
+
+                <h2>
+                    <i class="fa-solid fa-code"></i>
+                    Technical Skills
+                </h2>
+
+                <div class="skill-list">
+                    <span>C Programming</span>
+                    <span>C++</span>
+                    <span>Python</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </section>
+
+
+            <!-- PROJECTS -->
+
+            <section class="main-section">
+
+                <h2>
+                    <i class="fa-regular fa-folder-open"></i>
+                    Projects
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <strong>Personal Portfolio Website:</strong>
+                        A responsive website presenting my profile,
+                        education, technical skills, and contact details.
+                    </li>
+
+                    <li>
+                        <strong>Future Project:</strong>
+                        Space reserved for an additional project.
+                        Replace this item with an actual project before
+                        submitting the CV.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- HOBBIES -->
+
+            <section class="main-section">
+
+                <h2>
+                    <i class="fa-regular fa-heart"></i>
+                    Hobbies and Interests
+                </h2>
+
+                <p>
+                    Reading books, especially science fiction, and exploring
+                    ideas about science, technology, and the future.
+                </p>
+
+            </section>
+
+
+            <footer class="cv-footer">
+                Sristy Shaha | Computer Science and Engineering
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
